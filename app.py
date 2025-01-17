@@ -6,9 +6,8 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    target_time = '2025-02-10 13:00:00'
+    target_time = '2025-01-17 03:25:00'
 
-    # Düzenlenmiş mesaj
     message = """
     Tanıştığımız o ilk günden bu yana, birlikte mutluluğun en saf halini yaşadığımız güzel günlerimiz de oldu, 
     birbirimize dayanamadığımız acı dolu günlerimiz de. Ama her duyguyu seninle yaşamayı o kadar çok sevdim ki, 
@@ -37,7 +36,7 @@ def home():
     """
 
     if current_time < target_time:
-        message = "Gerçek bir vedaya hazır ol. 10 Şubat 13:00 'da görüşmek dileğiyle :)"
+        message = "10 Şubat 13:00 'da görüşmek dileğiyle :)"
     return render_template('message.html', message=message)
 
 if __name__ == "__main__":
