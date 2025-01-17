@@ -3,10 +3,13 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# Bu satırı buraya ekleyin
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 @app.route('/')
 def home():
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    target_time = '2025-01-17 03:25:00'
+    target_time = '2025-01-17 03:45:00'
 
     message = """
     Tanıştığımız o ilk günden bu yana, birlikte mutluluğun en saf halini yaşadığımız güzel günlerimiz de oldu, 
@@ -36,7 +39,7 @@ def home():
     """
 
     if current_time < target_time:
-        message = "10 Şubat 13:00 'da görüşmek dileğiyle :)"
+        message = "17 Ocak 03:45'da görüşmek dileğiyle :)"
     return render_template('message.html', message=message)
 
 if __name__ == "__main__":
